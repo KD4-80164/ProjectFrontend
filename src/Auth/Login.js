@@ -9,6 +9,7 @@ const Login = () => {
     const history = useHistory();
     const [emailId, setEmailId] = useState('');
     const [password, setPassword] = useState('');
+    const [loginid, setloginid] = useState([]);
 
     const ProceedLoginusingAPI = (e) => {
         e.preventDefault();
@@ -32,18 +33,17 @@ const Login = () => {
                         sessionStorage.setItem('RoleId', response.data.roleId);
                         sessionStorage.setItem('UserId', response.data.userId);
                         sessionStorage.setItem('UserName', response.data.name);
-                           var id = sessionStorage.getItem("RoleId");
-                           console.log(typeof(id));
-                        // if(id==1){
-                        //     history.push("/hotel");
-                        //     console.log("1");
-                        // }
-                        // else{
-                        //     console.log("2");
-                        //     history.push("/addhotel");
-                        // }
-                       
-                        console.log(sessionStorage.getItem("UserId"));
+                           var id = sessionStorage.getItem("UserId");
+                           debugger
+                            setloginid(id);
+                        if(id==1){
+                            history.push("/user");
+                            console.log("1");
+                        }
+                        else{
+                            console.log("2");
+                            history.push("/hotelmanager");
+                        }
                     }
                 })
                 .catch((error) => {

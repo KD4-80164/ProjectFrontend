@@ -31,9 +31,9 @@ const Navbar = () => {
           <div className='login-btn'>
               <Link className="links" to="/login">Login</Link>
             </div>
-            <div className='login-btn'>
+            {/* <div className='login-btn'>
               <Link onClick={logout} className="links" to="/logout" >Logout</Link>
-            </div>
+            </div> */}
         </div>
       </div>
     </>

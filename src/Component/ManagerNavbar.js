@@ -5,7 +5,7 @@ import '../Styles/Navbar.css'
 import { Dropdown } from 'react-bootstrap'
 import { Navbar } from 'react-bootstrap'
 
-const NavbarUser = () => {
+const ManagerNavbar = () => {
     const name = sessionStorage.getItem('UserName');
   const [showLinks, setShowLinks] = useState(false);
   function Click(){
@@ -30,8 +30,8 @@ const NavbarUser = () => {
                 
             </Dropdown.Toggle>
                 <Dropdown.Menu>
-                    <Dropdown.Item href="/user/manage-acc">Manage Account</Dropdown.Item>
-                    <Dropdown.Item href="/user/booking-history">Booking History</Dropdown.Item>
+                    <Dropdown.Item href="/hotel">Manage Account</Dropdown.Item>
+                    <Dropdown.Item href="/hotel">Add Hotel</Dropdown.Item>
                     <Dropdown.Item href="/logout">Logout</Dropdown.Item>
                 </Dropdown.Menu>
           </Dropdown>
@@ -42,4 +42,4 @@ const NavbarUser = () => {
   )
 }
 
-export default NavbarUser;
+export default ManagerNavbar;

@@ -6,30 +6,32 @@ import Signup from '../Auth/SignUp';
 import Hotel from './Hotel';
 import AddHotel from './AddHotel';
 import Navbar from './Navbar';
-import UserDashboard from './UserDashboard';
+import UserDashboard from './User';
 import { ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-import Dashboard from './Dashboard';
+import 'react-toastify/dist/ReactToastify.css'
 import Booking from './Booking';
 import ManageAccount from './ManageAccount';
 import BookingHistory from './History';
 import NavbarUser from './NavbarUser';
 import DropDown from './DropDown';
+import Logout from './Logout';
+import EmptyComponent from './Empty';
+import HotelManager from './HotelManager';
+import WithoutLogin from './WithoutLogin';
 var id = sessionStorage.getItem("RoleId");
 const Home = () => {
   return (
     <Router>
-    {id ==1 ? <NavbarUser /> : <Navbar />}
-    {id ==2 ? <AddHotel /> : <Hotel />}
+    {id ==null ?  <WithoutLogin /> : <EmptyComponent /> }
     <ToastContainer/>
     {/* <AddHotel/> */}
     <routes>
           <Route path="/login" component={Login} />
+          <Route path="/logout" component={Logout } />
           {/* <Route path="/navbaruser" component={NavbarUser} /> */}
           <Route path="/signup" component={Signup} />
-          <Route path="/hotel" component={Hotel} /> 
-          <Route path="/addhotel" component={AddHotel} /> 
-          <Route path="/dashboard" component={Dashboard} /> 
+          <Route path="/user" component={UserDashboard} /> 
+          <Route path="/hotelmanager" component={HotelManager} /> 
           <Route path="/booking/:hotelId" component={Booking} /> 
           <Route path="/user/manage-acc" component={ManageAccount} />
           <Route path="/user/booking-history" component={BookingHistory} />
