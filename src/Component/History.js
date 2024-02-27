@@ -83,8 +83,8 @@ const BookingHistory =()=>{
                                                     <td>{booking.roomId}</td>
                                                     <td>{booking.bookingId}</td>
                                                     <td>{booking.hotelName}</td>                                                    
-                                                    <td>{booking.checkIn}</td>
-                                                    <td>{booking.checkOut}</td>
+                                                    <td>{new Date(booking.checkIn).toLocaleString()}</td>
+                                                    <td>{new Date(booking.checkOut).toLocaleString()}</td>
                                                     <td>{booking.bookingStatus === true ? "Booked":"Cancelled"}</td>
                                                     <td>{booking.bookingPrice}</td>
                                                     <td><button className='btn btn-warning' onClick={()=>{CancelBooking(booking.bookingId)}}>Cancel</button></td>

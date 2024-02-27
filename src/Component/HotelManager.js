@@ -5,8 +5,6 @@ import Navbar from './Navbar';
 import AddHotel from './AddHotel';
 import ManagerNavbar from './ManagerNavbar';
 const HotelManager = () => {
-
-    debugger
     return(
       <>
         <ManagerNavbar/>

@@ -1,9 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import axios from "axios";
 import { useParams } from 'react-router-dom';
+import { useHistory, Link } from "react-router-dom"; 
+
 
 const Booking = () => {
+  const history = useHistory();
   const url = "http://localhost:5020/hotels/";
+  const token = sessionStorage.getItem('jwttoken');
   const userId = sessionStorage.getItem("UserId");
   const { hotelId } = useParams();
   const [hotelById, setHotelById] = useState(null);
@@ -43,8 +47,15 @@ const Booking = () => {
         "noOfRoom": parseInt(noOfRoom, 10), // Convert noOfRoom to integer
         "bookingPrice": 1000.900 
       };
+      const config = {
+        headers: {
+            Authorization: `Bearer ${token}` // Assuming your token is stored in the variable token
+        }
+    };
       console.log(bookingData);
-      await axios.post(postUrl, bookingData);
+      await axios.post(postUrl, bookingData,config).then(()=>{
+        history.push('/user')
+      });
       setBookingMessage('Your booking is successful.');
     } catch (error) {
       console.error('Error booking hotel:', error);

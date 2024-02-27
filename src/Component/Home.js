@@ -18,6 +18,9 @@ import Logout from './Logout';
 import EmptyComponent from './Empty';
 import HotelManager from './HotelManager';
 import WithoutLogin from './WithoutLogin';
+import ForgotPassword from './ForgetPassword';
+import ResetPassword from './ResetPassword';
+import Feedback from './Feedback';
 var id = sessionStorage.getItem("RoleId");
 const Home = () => {
   return (
@@ -35,6 +38,9 @@ const Home = () => {
           <Route path="/booking/:hotelId" component={Booking} /> 
           <Route path="/user/manage-acc" component={ManageAccount} />
           <Route path="/user/booking-history" component={BookingHistory} />
+          <Route path="/user/forgot-password" component={ForgotPassword} />
+          <Route path="/user/reset-password" component={ResetPassword} />
+          <Route path="/user/feedback" component={Feedback} />
     </routes>
     <Footer />
     </Router>

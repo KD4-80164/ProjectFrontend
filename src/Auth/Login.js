@@ -86,6 +86,7 @@ const Login = () => {
                         <div className="card-footer">
                             <button type="submit" className="btn btn-success">Login</button> 
                             <p>Don't have an Account? <Link to="/signup">Sign Up Here</Link></p> 
+                            <Link to="/user/forgot-password">Forgot Password?</Link>
                         </div>
                     </div>
                 </form>

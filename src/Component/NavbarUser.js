@@ -33,6 +33,7 @@ const NavbarUser = () => {
                     <Dropdown.Item href="/user/manage-acc">Manage Account</Dropdown.Item>
                     <Dropdown.Item href="/user/booking-history">Booking History</Dropdown.Item>
                     <Dropdown.Item href="/logout">Logout</Dropdown.Item>
+                    <Dropdown.Item href="/user/feedback">Feedback</Dropdown.Item>
                 </Dropdown.Menu>
           </Dropdown>
         </div>
